@@ -1,0 +1,110 @@
+<<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Buddy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-indicator.css">
+    <link rel="stylesheet" href="css/tau.min.css">
+    <link rel="stylesheet" href="css/tau.circle.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+
+<body style="color: black; background-color: black;">
+    <div id="container">
+        <div id="page-main" class="page">
+            <div class="header full">SeaWatch
+            </div>
+            <div class="list-circle" id="list-buddy">
+                <div class="list-focus-area">
+                    <div class="list-focus">
+                    </div>
+                    <div class="list-label">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-contact" class="page">
+            <div id="bgcolor-contact"></div>
+            <div id="name-contact" style="font-size:30px;"></div>
+            <div id="content-contact">
+               <div id="selector-box-contact">
+                    <div id="selector-call-contact">
+                        <div id="icon-call-contact"></div>
+                    </div>
+                    <div id="selector-mail-contact">
+                        <div id="icon-mail-contact"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="number-contact"></div>
+        </div>
+        
+        <div id="page-fish" class="page">
+        	<div style="height:15%; color:white; text-align: center; color: lightblue; font-size: 30px; line-height: 39px;">낚시 명소</div>
+            <div id="map"></div>
+        </div>
+        
+        <div id="page-info" class="page">
+	        <header class="ui-header">
+				<h2 class="ui-title">해양 정보</h2>
+			</header>
+			<div class="ui-content">
+				<ul class="ui-listview">
+					<li><a href="#">List1</a></li>
+					<li><a href="#">List2</a></li>
+					<li><a href="#">List3</a></li>
+					<li><a href="#">List4</a></li>
+					<li><a href="#">List5</a></li>
+					<li><a href="#">List6</a></li>
+				</ul>
+			</div>
+        </div>
+    </div>
+
+    <script src="js/page.js"></script>
+    <script src="js/custom-indicator.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script src="js/circle-helper.js"></script>
+    <script src="js/tau.min.js"></script>
+    
+    <script>
+    	var latitude;
+       	var longitude;
+       	var map;
+       	
+       	function getlocation(){
+       		navigator.geolocation.getCurrentPosition(function(position) {
+       		  latitude = position.coords.latitude;
+       		  longitude = position.coords.longitude;
+       		  
+       		  initMap();    
+       		}, function(error) {
+       		    alert('GPS error occurred');
+       		});
+       	}
+                      
+       	function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+	   			center: {lat: latitude, lng: longitude},
+	   			zoom: 10,
+	   			mapTypeId : google.maps.MapTypeId.HYBRID,
+				streetViewControl : false,
+				mapTypeControl : false,
+				scaleControl : false,
+				rotateControl : false,
+				overviewMapControl : false
+ 			});
+        }
+       	
+       	$.ajax({
+       		url : 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDwueoJL8wI2zTt2hVey0Jh2-X57W2ecoE&callback=getlocation',
+       		success : function(data) {
+       			getlocation();
+       		}
+       	});
+    </script>
+</body>
+</html>

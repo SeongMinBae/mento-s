@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/BuddyUI" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="jVxDCwihAU.BuddyUI" package="jVxDCwihAU" required_version="2.3"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.normal"/>
+    <icon src="icon.png"/>
+    <name>SeaWatch</name>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:profile name="wearable"/>
+    <tizen:setting hwkey-event="enable"/>
+    
+    <access origin="http://googleapis.com" subdomains="true"></access>
+    <access origin="http://gstatic.com" subdomains="true"></access>
+    <access origin="http://google.com" subdomains="true"></access>
+    <access origin="*" subdomains="true"></access>
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:privilege name="http://tizen.org/privilege/location"/>
+    <feature name="http://tizen.org/feature/location.gps"/>
+    
+</widget>
