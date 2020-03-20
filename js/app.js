@@ -6,7 +6,7 @@
             "실시간 해양 관광 정보",
             "서핑"
         ],
-        PERSON_DATA_IMAGE = [ 
+        MAIN_DATA_IMAGE = [ 
             "./image/fish3.svg",
             "./image/wave.svg",
             "./image/wind.svg",
@@ -59,8 +59,8 @@
     function pushData() {
         var i;
         for (i = 0; i < MENU_NAME.length; i++) {
-            if (PERSON_DATA_IMAGE[i]) {
-                listController.addData(MENU_NAME[i], PERSON_DATA_IMAGE[i], createPageChangeFunc(i));
+            if (MAIN_DATA_IMAGE[i]) {
+                listController.addData(MENU_NAME[i], MAIN_DATA_IMAGE[i], createPageChangeFunc(i));
             } else {
                 listController.addData(MENU_NAME[i], null, createPageChangeFunc(i));
             }
