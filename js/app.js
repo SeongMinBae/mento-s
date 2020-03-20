@@ -108,7 +108,6 @@
         var elmHeader = document.querySelector(".header"),
             progress;
 
-        // If there is no working animation, animation flag will be set to with the timestamp.
         if (!animStartTime) {
             animStartTime = timestamp;
         }
@@ -116,8 +115,6 @@
 
         setAnimationStyle(elmHeader, animStart, animEnd, progress / ANIM_DURATION);
 
-        // If the animation is not reached to the end of time, Request the next frame of rendering for animation.
-        // Otherwise, clear the request and flag.
         if (progress < ANIM_DURATION) {
             animRequest = window.requestAnimationFrame(drawAnimationFrame.bind(this, animStart, animEnd));
         } else {
