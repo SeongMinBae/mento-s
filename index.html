@@ -1,9 +1,9 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>Buddy</title>
+    <title>Main</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom-indicator.css">
     <link rel="stylesheet" href="css/tau.min.css">
@@ -77,11 +77,12 @@
        	
        	function getlocation(){
        		navigator.geolocation.getCurrentPosition(function(position) {
-       		  latitude = position.coords.latitude;
-       		  longitude = position.coords.longitude;
+       		    latitude = position.coords.latitude;
+       		    longitude = position.coords.longitude;
        		  
-       		  initMap();    
+       		    initMap();    
        		}, function(error) {
+       			console.log();
        		    alert('GPS error occurred');
        		});
        	}

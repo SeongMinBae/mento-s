@@ -6,7 +6,7 @@
             "실시간 해양 관광 정보",
             "서핑"
         ],
-        PERSON_DATA_IMAGE = [ 
+        MAIN_DATA_IMAGE = [ 
             "./image/fish3.svg",
             "./image/wave.svg",
             "./image/wind.svg",
@@ -59,8 +59,8 @@
     function pushData() {
         var i;
         for (i = 0; i < MENU_NAME.length; i++) {
-            if (PERSON_DATA_IMAGE[i]) {
-                listController.addData(MENU_NAME[i], PERSON_DATA_IMAGE[i], createPageChangeFunc(i));
+            if (MAIN_DATA_IMAGE[i]) {
+                listController.addData(MENU_NAME[i], MAIN_DATA_IMAGE[i], createPageChangeFunc(i));
             } else {
                 listController.addData(MENU_NAME[i], null, createPageChangeFunc(i));
             }
@@ -108,7 +108,6 @@
         var elmHeader = document.querySelector(".header"),
             progress;
 
-        // If there is no working animation, animation flag will be set to with the timestamp.
         if (!animStartTime) {
             animStartTime = timestamp;
         }
@@ -116,8 +115,6 @@
 
         setAnimationStyle(elmHeader, animStart, animEnd, progress / ANIM_DURATION);
 
-        // If the animation is not reached to the end of time, Request the next frame of rendering for animation.
-        // Otherwise, clear the request and flag.
         if (progress < ANIM_DURATION) {
             animRequest = window.requestAnimationFrame(drawAnimationFrame.bind(this, animStart, animEnd));
         } else {
