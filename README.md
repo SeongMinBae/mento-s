@@ -7,8 +7,8 @@
 
   ### about us  
 |  [**김동환**](https://github.com/dongkakika) | [**권용균**](https://github.com/YongGyunKwon) | [**배성민**](https://github.com/SeongMinBae) | [**최용석**](https://github.com/dydtjr1515) |  
-| ---------- | :------------: | :--------: | ----------: |
-| ![Alt text](/image/zac.png) | ![Alt text](/image/zac1.jpg) | ![Alt text](/image/zac2.jpg =100*20) | ![Alt text](/image/zac3.jpg =100*20) |   
+| ---------- | :------------: | :--------: | :----------: |
+| ![Alt text](/image/zac.png){: width="100" heigt="100"} | ![Alt text](/image/zac1.jpg){: width="100" heigt="100"} | ![Alt text](/image/zac2.jpg){: width="100" heigt="100"} | ![Alt text](/image/zac3.jpg){: width="100" heigt="100"} |   
 | All areas | All areas | All areas | All areas |
    
    
