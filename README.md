@@ -6,10 +6,10 @@
 
 
   ### about us  
-   | ---------- | :------------: | :--------: | ----------: |
-   | ![Alt text](/image/zac.png) | ![Alt text](/image/zac1.jpg) | ![Alt text](/image/zac2.jpg =100x20) | ![Alt text](/image/zac3.jpg =100x20) |   
-   |  [**김동환**](https://github.com/dongkakika) | [**권용균**](https://github.com/YongGyunKwon) | [**배성민**](https://github.com/SeongMinBae) | [**최용석**](https://github.com/dydtjr1515) |
-   | All areas | All areas | All areas | All areas |
+|  [**김동환**](https://github.com/dongkakika) | [**권용균**](https://github.com/YongGyunKwon) | [**배성민**](https://github.com/SeongMinBae) | [**최용석**](https://github.com/dydtjr1515) |  
+| ---------- | :------------: | :--------: | ----------: |
+| ![Alt text](/image/zac.png) | ![Alt text](/image/zac1.jpg) | ![Alt text](/image/zac2.jpg =100*20) | ![Alt text](/image/zac3.jpg =100*20) |   
+| All areas | All areas | All areas | All areas |
    
    
 
