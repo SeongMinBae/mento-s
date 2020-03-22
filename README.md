@@ -5,9 +5,9 @@
 
 
 
-  *** about us
+  *** about us--
    | ---------- | ------------ | -------- | ---------- |
-   | ![동카키카](/image/김동환 대표이미지.png) | ![권용균](/image/권용균 대표이미지.jpg) | ![배성민](/image/배성민 대표이미지.jpg) | ![최용석](/image/최용석 대표이미지.jpg) |   
+   | ![Alt text](/image/김동환 대표이미지.png) | ![Alt text](/image/권용균 대표이미지.jpg) | ![Alt text](/image/배성민 대표이미지.jpg) | ![Alt text](/image/최용석 대표이미지.jpg) |   
    |  [**김동환**](https://github.com/dongkakika) | [**권용균**](https://github.com/YongGyunKwon) | [**배성민**](https://github.com/SeongMinBae) | [**최용석**](https://github.com/dydtjr1515) |
    | All areas | All areas | All areas | All areas |
    
