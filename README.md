@@ -8,5 +8,5 @@
   ### about us  
 |  [**김동환**](https://github.com/dongkakika) | [**권용균**](https://github.com/YongGyunKwon) | [**배성민**](https://github.com/SeongMinBae) | [**최용석**](https://github.com/dydtjr1515) |  
 | :----------: | :------------: | :--------: | :----------: |
-| <img src="/image/zac1.png" width="100%" weight="100%"> | <img src="/image/zac.jpg" width="100%" weight="100%"> | <img src="/image/zac2.jpg" width="100%" weight="100%"> | <img src="/image/zac4.jpg" width="150" weight="150"> |   
+| <img src="/image/zac1.png" width="100%" weight="100%"> | <img src="/image/zac.jpg" width="100%" weight="100%"> | <img src="/image/zac2.jpg" width="100%" weight="100%"> | <img src="/image/zac4.jpg" width="50%" weight="50%"> |   
 | All areas | All areas | All areas | All areas |
