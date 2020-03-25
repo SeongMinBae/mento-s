@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>파고, 유속, 유향, 해무 정보</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-indicator.css">
+    <link rel="stylesheet" href="css/tau.min.css">
+    <link rel="stylesheet" href="css/tau.circle.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="color: black; background-color: black;">
+	<div class="ui-page ui-page-active" id="main">
+		<header class="ui-header">
+			<h2 class="ui-title">해양 정보 [관측소]</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview">
+				<li><a onclick="info('TW_0088');">감천항</a></li>
+				<li><a onclick="info('TW_0089');">경포대해수욕장</a></li>
+				<li><a onclick="info('DT_0042');">교본초</a></li>
+				<li><a onclick="info('KG_0025');">남해동부</a></li>
+				<li><a onclick="info('TW_0069');">대천해수욕장</a></li>
+				<li><a onclick="info('KG_0024');">대한해협</a></li>
+				<li><a onclick="info('DT_0041');">복사초</a></li>
+				<li><a onclick="info('IE_0061');">신안가거초</a></li>
+				<li><a onclick="info('IE_0062');">옹진소청초</a></li>
+				<li><a onclick="info('KG_0101');">울릉도북동</a></li>
+				<li><a onclick="info('KG_0102');">울릉도북서</a></li>
+				<li><a onclick="info('IE_0060');">이어도</a></li>
+				<li><a onclick="info('DT_0039');">왕돌초</a></li>
+				<li><a onclick="info('KG_0021');">제주남부</a></li>
+				<li><a onclick="info('KG_0028');">제주해협</a></li>
+				<li><a onclick="info('TW_0075');">중문해수욕장</a></li>
+				<li><a onclick="info('TW_0062');">해운대해수욕장</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+<script src="lib/tau/wearable/js/tau.min.js"></script>
+<script src="js/circle-helper.js"></script>
+<script src="js/info.js"></script>
+<script src="js/lowBatteryCheck.js"></script>
+<script>
+	function info(key){
+		var wave_height; //파고
+		var current_speed; //유속
+		var current_direct; //유향
+		var seafog_master; //해무발생 확률
+		var seafog_thick; //보통해무
+		var seafog_thin; //짙은해무
+		
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+		
+		if(dd<10) {
+		    dd='0'+dd
+		} 
+		
+		if(mm<10) {
+		    mm='0'+mm
+		} 
+		
+		today = yyyy + mm+ dd;
+		
+		//파고
+		$.ajax({
+       		url : 'http://www.khoa.go.kr/oceangrid/grid/api/obsWaveHight/search.do?ServiceKey=IF0v6DPsEiC4sbWoHD8Rrw==&ObsCode=' + key + '&Date=' + today + '&ResultType=json',
+       		success : function(result) {
+       			var parseResult = JSON.parse(result);
+       			wave_height = parseResult.result.data[0].wave_height;
+       		}
+       	});
+       	
+       	//조류
+       	$.ajax({
+       		url : 'http://www.khoa.go.kr/oceangrid/grid/api/tidalBu/search.do?ServiceKey=IF0v6DPsEiC4sbWoHD8Rrw==&ObsCode=' + key + '&Date=' + today + '&ResultType=json',
+       		success : function(result) {
+       			var parseResult = JSON.parse(result);
+       			current_speed = parseResult.result.data[0].current_speed;
+       			current_direct = parseResult.result.data[0].current_direct;
+       		}
+       	});
+       	
+       	//해무
+       	$.ajax({
+       		url : 'http://www.khoa.go.kr/oceangrid/grid/api/seafog/search.do?ServiceKey=IF0v6DPsEiC4sbWoHD8Rrw==&ObsCode=' + key + '&Date=' + today + '&ResultType=json',
+       		success : function(result) {
+       			var parseResult = JSON.parse(result);
+       			seafog_master = parseResult.result.data[0].seafog_master;
+				seafog_thick = parseResult.result.data[0].seafog_thick;
+				seafog_thin = parseResult.result.data[0].seafog_thin;
+       		}
+       	});
+       	
+       	setTimeout(function(){
+       		if(wave_height === undefined)wave_height = 0; 
+       		if(current_speed === undefined)current_speed = 0;
+       		if(current_direct === undefined)current_direct = 0;
+       		if(seafog_master === undefined)seafog_master = 0;
+       		if(seafog_thick === undefined)seafog_thick = 0;
+       		if(seafog_thin === undefined)seafog_thin = 0;
+       		
+       		alert("파고 : " + wave_height + "\n유속 : " + current_speed + "\n유향 : " + current_direct + "\n해무 발생 확률 : " + seafog_master + "\n보통 해무 : " + seafog_thick + "\n짙은 해무 : " + seafog_thin);
+       	},2000);
+	}
+
+    function keyEventHandler(ev) {
+        if (ev.keyName === "back") {
+            window.history.back();    
+        }
+    }
+    
+    function init() {
+        window.addEventListener("tizenhwkey", keyEventHandler);
+    }
+
+	window.onload = init();
+</script>
+</html>
