@@ -144,7 +144,7 @@ var pageController = (function() {
      * @return {boolean} true if the page is successfully displayed.
      */
     this.moveBackPage = function() {
-        var beforePage = popHistory();
+        var beforePage = popHistory();	
 
         if (beforePage !== null) {
             showPage(beforePage);
