@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Buddy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-indicator.css">
+    <link rel="stylesheet" href="css/tau.min.css">
+    <link rel="stylesheet" href="css/tau.circle.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="color: black; background-color: black;">
+	<div class="ui-page ui-page-active" id="main">
+		<header class="ui-header">
+			<h2 class="ui-title">실시간 해양 관광정보</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview" >
+				<li><a onclick="info('1');" style="font-size:27px;">지금 바다갈라지는 곳</a></li>
+				<li><a onclick="info('2');" style="font-size:27px;">지금 스킨스쿠버하기 좋은 곳</a></li>
+				<li><a onclick="info('3');" style="font-size:27px;">지금 갯벌체험하기 좋은 곳</a></li>
+				<li><a onclick="info('4');" style="font-size:27px;">지금 낚시하기 좋은 곳</a></li>
+				<li><a onclick="info('5');" style="font-size:27px;">지금 해수욕하기 좋은 곳</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+<script src="lib/tau/wearable/js/tau.min.js"></script>
+<script src="js/circle-helper.js"></script>
+<script src="js/info.js"></script>
+<script src="js/lowBatteryCheck.js"></script>
+<script>
+	function info(key){
+		var totalStr = '';
+		
+		$.ajax({
+       		url : 'http://www.khoa.go.kr/oceangrid/grid/api/fcServiceInfo/search.do?ServiceKey=IF0v6DPsEiC4sbWoHD8Rrw==&ResultType=json',
+       		success : function(result) {
+       			var parseResult = JSON.parse(result);
+       			if(key == 1){//바다 갈라지는 곳
+       				parseResult.result.searoad.data.forEach(function(i,e){
+       					totalStr += parseResult.result.searoad.data[e].name + " " + parseResult.result.searoad.data[e].addr + "\n\n";
+       				})
+       			}else if(key == 2){//스킨스쿠버
+       				parseResult.result.scuba.data.forEach(function(i,e){
+       					totalStr += parseResult.result.scuba.data[e].name + " " + parseResult.result.scuba.data[e].addr + "\n\n";
+       				})
+       			}else if(key == 3){//갯벌체험
+       				parseResult.result.mudflat.data.forEach(function(i,e){
+       					totalStr += parseResult.result.mudflat.data[e].name + " " + parseResult.result.mudflat.data[e].addr + "\n\n";
+       				})
+       			}else if(key == 4){//지금 낚시하기 좋은 곳
+       				parseResult.result.fishing.data.forEach(function(i,e){
+       					totalStr += parseResult.result.fishing.data[e].name + " " + parseResult.result.fishing.data[e].addr + "\n\n";
+       				})
+       			}else if(key == 4){//지금 해수욕하기 좋은 곳
+       				parseResult.result.beach.data.forEach(function(i,e){
+       					totalStr += parseResult.result.beach.data[e].name + " " + parseResult.result.beach.data[e].addr + "\n\n";
+       				})
+       			}
+       			alert(totalStr)
+       		}
+       	});
+	}
+
+    function keyEventHandler(ev) {
+        if (ev.keyName === "back") {
+            window.history.back();    
+        }
+    }
+    
+    function init() {
+        window.addEventListener("tizenhwkey", keyEventHandler);
+    }
+
+	window.onload = init();
+</script>
+</html>
