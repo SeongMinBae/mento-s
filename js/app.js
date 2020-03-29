@@ -4,7 +4,7 @@
             "파고, 유속, 유향, 해무 정보",
             "조위, 수온, 기온, 풍량, 풍속 정보",
             "실시간 해양 관광 정보",
-            "서핑"
+            "서핑","Fish counter"
         ],
         MAIN_DATA_IMAGE = [ 
             "./image/fish3.svg",
@@ -12,6 +12,7 @@
             "./image/wind.svg",
             "./image/travel2.svg",
             "./image/surfing3.svg"
+            //여기다가 메뉴 이미지 추가할것 
         ],
         HEADER_DATA = {
             "NONE": {
@@ -53,6 +54,11 @@
             }else if(data == 3){
             	location.href = "trip.html";
             }
+            else if(data ==5)
+            {
+            	loacation.href="";//하나 파기 
+            }
+            //위에 string 배열 순서대로 data 숫자 카운트 할것. .. 
         };
     }
 
