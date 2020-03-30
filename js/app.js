@@ -55,7 +55,7 @@
             }else if(data == 3){
             	location.href = "trip.html";
             }
-            else if(data ==5)
+            else if(data == 5)
             {
             	loacation.href="fishcount.html";//하나 파기 
             }

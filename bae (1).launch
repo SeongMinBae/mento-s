@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.tizen.web.zimlaunch.WebAppLaunch">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/bae"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.tizen.common.CONFIG_ATTR_PROJECT_NAME" value="bae"/>
+<stringAttribute key="org.tizen.commonCONFIG_ATTR_DEVICE_SERIAL_NO" value="emulator-26101"/>
+<intAttribute key="org.tizen.web.zimlaunch.LATEST_LAUNCH_TYPE" value="0"/>
+<booleanAttribute key="org.tizen.web.zimlaunch.LIVE_EDITING" value="true"/>
+<intAttribute key="org.tizen.web.zimlaunch.TIMEOUT_VALUE" value="300"/>
+<booleanAttribute key="org.tizen.web.zimlaunch.UPDATE_MODE" value="true"/>
+</launchConfiguration>

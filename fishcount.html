@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ 	<!DOCTYPE html>
 <html>
 
 <head>
@@ -18,53 +18,16 @@
 		</header>
 		<div class="ui-content">
 			<ul class="ui-listview">
-				<li><a onclick="info('DT_0019');">가덕도</a></li>
-				<li><a onclick="info('DT_0032');">강화대교</a></li>
-				<li><a onclick="info('DT_0031');">거문도</a></li>
-				<li><a onclick="info('DT_0029');">거제도(구조라)</a></li>
-				<li><a onclick="info('DT_0058');">경인항</a></li>
-				<li><a onclick="info('DT_0026');">고흥(발포)</a></li>
-				<li><a onclick="info('DT_0018');">군산(외항)</a></li>
-				<li><a onclick="info('DT_0038');">굴업도</a></li>
-				<li><a onclick="info('DT_0049');">광양</a></li>
-				<li><a onclick="info('DT_0057');">동해항</a></li>
-				<li><a onclick="info('DT_0017');">대산</a></li>
-				<li><a onclick="info('DT_0035');">대흑산도</a></li>
-				<li><a onclick="info('DT_0062');">마산</a></li>
-				<li><a onclick="info('DT_0023');">모슬포</a></li>
-				<li><a onclick="info('DT_0007');">목포</a></li>
-				<li><a onclick="info('DT_0006');">묵호</a></li>
-				<li><a onclick="info('DT_0025');">보령</a></li>
-				<li><a onclick="info('DT_0005');">부산</a></li>
-				<li><a onclick="info('DT_0056');">부산신항</a></li>
-				<li><a onclick="info('DT_0061');">삼천포</a></li>
-				<li><a onclick="info('DT_0010');">서귀포</a></li>
-				<li><a onclick="info('DT_0051');">서천(마량)</a></li>
-				<li><a onclick="info('DT_0022');">성산포</a></li>
-				<li><a onclick="info('DT_0012');">속초</a></li>
-				<li><a onclick="info('DT_0008');">안산</a></li>
-				<li><a onclick="info('DT_0034');">안흥</a></li>
-				<li><a onclick="info('DT_0037');">어청도</a></li>
-				<li><a onclick="info('DT_0016');">여수</a></li>
-				<li><a onclick="info('DT_0003');">영광</a></li>
-				<li><a onclick="info('DT_0044');">영종대교</a></li>
-				<li><a onclick="info('DT_0043');">영흥도</a></li>
-				<li><a onclick="info('DT_0013');">울릉도</a></li>
-				<li><a onclick="info('DT_0052');">인천송도</a></li>
-				<li><a onclick="info('DT_0043');">영흥도</a></li>
-				<li><a onclick="info('DT_0020');">울산</a></li>
-				<li><a onclick="info('DT_0001');">인천</a></li>
-				<li><a onclick="info('DT_0027');">완도</a></li>
-				<li><a onclick="info('DT_0030');">위도</a></li>
-				<li><a onclick="info('DT_0024');">장항</a></li>
-				<li><a onclick="info('DT_0028');">진도(수품)</a></li>
-				<li><a onclick="info('DT_0004');">제주</a></li>
-				<li><a onclick="info('DT_0021');">추자도</a></li>
-				<li><a onclick="info('DT_0002');">평택</a></li>
-				<li><a onclick="info('DT_0901');">포항</a></li>
-				<li><a onclick="info('DT_0014');">통영</a></li>
-				<li><a onclick="info('DT_0050');">태안</a></li>
-				<li><a onclick="info('DT_0011');">후포</a></li>
+				<li><a onclick="info('DT_0019');">광어</a></li>
+				
+				<li>
+				<a onclick="view_fish('fish1');">우럭
+				</a>
+				<input type="button" value="+" onclick="increase_fish1();"></input>
+				</li>
+				<li><a onclick="info('DT_0032');">메기</a></li>
+				<li><a onclick="info('DT_0032');">민물고기</a></li>
+				<li><a onclick="info('DT_0031');">기타</a></li>
 			</ul>
 		</div>
 	</div>
@@ -75,76 +38,32 @@
 <script src="js/info.js"></script>
 <script src="js/lowBatteryCheck.js"></script>
 <script>
-	function info(key){
-		var tide_level; //조위
-		var water_temp; //수온
-		var air_temp; //기온
-		var wind_dir; //풍향
-		var wind_speed; //풍속
+	
+		var fish1;
+		var fish2;
+		var fish3;
+		var fish4;
+		var fish5;
 		
-		var today = new Date();
-		var dd = today.getDate();
-		var mm = today.getMonth()+1; //January is 0!
-		var yyyy = today.getFullYear();
+		function increase_fish1()
+		{
+			fish1+=1;
+		}
 		
-		if(dd<10) {
-		    dd='0'+dd
-		} 
-		
-		if(mm<10) {
-		    mm='0'+mm
-		} 
-		
-		today = yyyy + mm+ dd;
-		
-		//조위
-		$.ajax({
-       		url : 'http://www.khoa.go.kr/oceangrid/grid/api/tideObs/search.do?ServiceKey=IF0v6DPsEiC4sbWoHD8Rrw==&ObsCode=' + key + '&Date=' + today + '&ResultType=json',
-       		success : function(result) {
-       			var parseResult = JSON.parse(result);
-       			tide_level = parseResult.result.data[0].tide_level;
-       		}
-       	});
-       	
-       	//수온
-		$.ajax({
-       		url : 'http://www.khoa.go.kr/oceangrid/grid/api/tideObsTemp/search.do?ServiceKey=IF0v6DPsEiC4sbWoHD8Rrw==&ObsCode=' + key + '&Date=' + today + '&ResultType=json',
-       		success : function(result) {
-       			var parseResult = JSON.parse(result);
-       			water_temp = parseResult.result.data[0].water_temp;
-       		}
-       	});
-       	
-       	//기온
-		$.ajax({
-       		url : 'http://www.khoa.go.kr/oceangrid/grid/api/tideObsAirTemp/search.do?ServiceKey=IF0v6DPsEiC4sbWoHD8Rrw==&ObsCode=' + key + '&Date=' + today + '&ResultType=json',
-       		success : function(result) {
-       			var parseResult = JSON.parse(result);
-       			air_temp = parseResult.result.data[0].air_temp;
-       		}
-       	});
-       	
-       	//풍향, 풍속
-       	$.ajax({
-       		url : 'http://www.khoa.go.kr/oceangrid/grid/api/tideObsWind/search.do?ServiceKey=IF0v6DPsEiC4sbWoHD8Rrw==&ObsCode=' + key + '&Date=' + today + '&ResultType=json',
-       		success : function(result) {
-       			var parseResult = JSON.parse(result);
-       			wind_dir = parseResult.result.data[0].wind_dir;
-       			wind_speed = parseResult.result.data[0].wind_speed;
-       		}
-       	});
-       	
-       	setTimeout(function(){
-       		if(tide_level === undefined)tide_level = 0; 
-       		if(water_temp === undefined)water_temp = 0;
-       		if(air_temp === undefined)air_temp = 0;  
-       		if(wind_dir === undefined)wind_dir = 0;
-       		if(wind_speed === undefined)wind_speed = 0;    
-       		
-       		alert("조위 : " + tide_level + "\n수온 : " + water_temp + "\n기온 : " + air_temp + "\n풍향 : " + wind_dir + "\n풍속 : " + wind_speed);
-       	},2000);
-	}
-
+		function view_fish(viewfish)
+		{
+			alert(viewfish+" 잡은개수 :"+viewfish+"\n");
+			
+		}
+	
+		function total_fish()
+		{
+			var fishtotal=fish1+fish2+fish3+fish4+fish5;
+			alert("총 잡은 물고기"+fishtotal+"\n");	
+		}
+			
+	
+	
     function keyEventHandler(ev) {
         if (ev.keyName === "back") {
             window.history.back();    
