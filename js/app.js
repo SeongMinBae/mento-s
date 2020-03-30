@@ -39,6 +39,7 @@
         return elm;
     }
 
+    
     function createPageChangeFunc(data) {
         return function() {
             var elmName = document.querySelector("#name-contact"),
