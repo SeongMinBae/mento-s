@@ -56,7 +56,7 @@
             }
             else if(data ==5)
             {
-            	loacation.href="";//하나 파기 
+            	loacation.href="fishcount.html";//하나 파기 
             }
             //위에 string 배열 순서대로 data 숫자 카운트 할것. .. 
         };
