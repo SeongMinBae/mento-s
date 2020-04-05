@@ -10,5 +10,10 @@ function createPageChangeFunc(data) {
             if(data == 1){
             	location.href = "info.html";
             }
+            //20200403 by Dobby
+            if(data==5)
+            {
+            	location.href="fishcount.html";
+            }
         };
     }
