@@ -56,7 +56,7 @@
 </Reference>
 <Reference URI="fishcount.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>DLYgBTypJ46vF/fqIGeUz/jXq7hZitfNtIRDNS6VvR4=</DigestValue>
+<DigestValue>YUQfeDAUtCpVJvNmWrMXFTH1G13T1A2nzznkQlG3jUo=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -311,11 +311,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-iODEU7sBd391w7YS9tkPh1yjkkj5xHmc9JSwrnyJnuRdFDjtOAUieIlMEKlG7yGLWcOM9HEKl86l
-sDTFJ/u9iE4b6Z7BGTEwehTY4ANxO89siBbMEI3hLKJN+BmTTnP3kl4f2xWaOnXXLbPkBkCoEd8T
-v6QVeRxBFhmMIzgBB0lr5tG7+Thzb+IsDMQ+m6ts4xQE5SUkgEkB6Pd2iadZbnjXipfhM0GCdv8+
-4Y/fT7Wg/vm2BykG6SlUusG4UWWe3e6POiMBnuAwxvQF/ethtw8FxXkQ0lru05bixTeyWPCjkP/m
-P+++ML1hJeZVsn4V6d/NHywEHaYrc3ZyRocDUg==
+STw4tTS1IOiah6mTEMpWFpM24Gz05QbkCYp4SsUNBoUALkNfls69VfvbIvWvGwjkp6b4gsFKiFvt
+pKxkA3xfpc5xJ7GxFwrNWs71itDHamicjKytVp2UGxfrqEDph3UwDAaUSyiZJTQV0g3uJ329rk1H
+PKfma6i4D1ZJsSixEe1I4OqTTYhZpvNsuIYp8EbuHKtdDh/RZxGfwtMe4DPF3upOqzsEn5Q3sb6I
+hydJMs6miWrKbe01cjZWiq3r2VGK+mW1CuWYCFIF3f7rUKdxFfPQEOgA5lrLHZBnrY1bQgMxolEc
+cByAwb16MAsimROr/dOuDYff5W13HhqLQIIR9w==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
