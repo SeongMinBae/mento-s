@@ -4,19 +4,18 @@ import sys
 import requests as rq
 import re
 
-url = 'http://www.icferry.or.kr/dmstc/nvg/monthlist.do?menuKey=20/5'
+url = 'http://www.icferry.or.kr/dmstc/nvg/monthlist.do?menuKey=20'
 
 if(rq.get(url).status_code != 200):
 	print("error : 잘못된 페이지를 참조했습니다.")
 
-path = '/home/jim/crawling/chromedriver'
+path = '/home/jim/crawler/crawler/chromedriver_linux64/chromedriver'
 driver = webdriver.Chrome(path)
 driver.get(url)
 soup = BS(driver.page_source, 'lxml')
 tbody = soup.find(id="cl_body")
 tds = tbody.find_all("td")
 
-# 데이터 추출 실패 -> list에 None 반환
 if(tds == None):
 	print('error : 데이터를 가져오는데 실패했습니다.')
 	sys.exit()
