@@ -16,6 +16,7 @@ soup = BS(driver.page_source, 'lxml')
 tbody = soup.find(id="cl_body")
 tds = tbody.find_all("td")
 
+# 동적데이터 수집 실패 -> None 반환
 if(tds == None):
 	print('error : 데이터를 가져오는데 실패했습니다.')
 	sys.exit()
@@ -28,6 +29,12 @@ for idx, td in enumerate(tds):
 
 print(totallist)
 
-print("리스트의 2번째 항목을 참조합니다.")
-print("totallist[2] == ", totallist[2])
+# 리스트로 데이터 참조
+# print("리스트의 2번째 항목을 참조합니다.")
+# print("totallist[2] == ", totallist[2])
 
+file = open('depart_info.txt', 'w')
+for i in range(len(totallist)):
+	file.write(totallist[i] + '\n')
+
+file.close()
