@@ -4,7 +4,8 @@
     <access origin="http://gstatic.com" subdomains="true"></access>
     <access origin="http://google.com" subdomains="true"></access>
     <access origin="*" subdomains="true"></access>
-    <tizen:application id="jVxDCwihAU.BuddyUI" package="jVxDCwihAU" required_version="2.3"/>
+    <tizen:application id="jVxDCwihAU.SeaWatch" package="jVxDCwihAU" required_version="2.3"/>
+    <author href="baelab.co.kr" email="bsm9100@naver.com">Mento's</author>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.normal"/>
     <feature name="http://tizen.org/feature/location.gps"/>
