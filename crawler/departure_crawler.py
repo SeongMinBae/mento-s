@@ -45,7 +45,7 @@ while j<6:
 		print('Error : 데이터를 가져오는데 실패했습니다.')
 		sys.exit()
 
-	# Saving the result of crawling as a form of text file
+	# Saving the result of crawling as a form of text file.
 	file = open('depart_info.txt', 'w')
 	for i in range(len(totallist)):
 		file.write(totallist[i] + '\n')
