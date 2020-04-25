@@ -66,9 +66,29 @@
 	</div>
 </body>
 
+<!-- Tizen SqLite -->
+<script src="lib/angular.min.js">
+	
+	
+	var db, version, dbName, dbDisplayName, dbSize;
+	version = 1.0; 	
+	dbName = "tizendb";		//database name setting
+	dbDisplayName = "tizen_test_db"; //database display name setting
+	dbSize = 2 * 1024 * 1024; //database size setting
+
+	db.transaction
+	(
+			function(t) 
+			{
+   				t.executeSql("CREATE TABLE tizenTable (id INTEGER PRIMARY KEY,title TEXT, content TEXT, insertDay DATETIME)",[]);
+			}
+	);
+	
+
+</script>
 
 <script src="lib/tau/wearable/js/tau.min.js"></script>
-<script src="js/circle-helper.js"></script>
+<script src="js/circle-helper.js"></script> 
 <script src="js/info.js"></script>
 <script src="js/lowBatteryCheck.js"></script>
 

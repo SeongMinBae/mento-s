@@ -56,7 +56,7 @@
 </Reference>
 <Reference URI="fishcount.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>YUQfeDAUtCpVJvNmWrMXFTH1G13T1A2nzznkQlG3jUo=</DigestValue>
+<DigestValue>3/dQmQEYJX0VP/OUNCJF2I6my6uw6znN/jau4psoGWY=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -282,6 +282,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>KyoU/qEdl1AX3w9maDk2PpmDBOE1cqR/9dmYTBPTd+8=</DigestValue>
 </Reference>
+<Reference URI="js%2Ffish.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Bue6NN9ukcumldUspVd+gSy0GqByOMt9rAj3XgMwEkQ=</DigestValue>
+</Reference>
 <Reference URI="js%2Finfo.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>oMqZ9Cf3WeKknOY+KXwaz5gxxU3PRf5IGM8+nxvLIws=</DigestValue>
@@ -311,11 +315,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-STw4tTS1IOiah6mTEMpWFpM24Gz05QbkCYp4SsUNBoUALkNfls69VfvbIvWvGwjkp6b4gsFKiFvt
-pKxkA3xfpc5xJ7GxFwrNWs71itDHamicjKytVp2UGxfrqEDph3UwDAaUSyiZJTQV0g3uJ329rk1H
-PKfma6i4D1ZJsSixEe1I4OqTTYhZpvNsuIYp8EbuHKtdDh/RZxGfwtMe4DPF3upOqzsEn5Q3sb6I
-hydJMs6miWrKbe01cjZWiq3r2VGK+mW1CuWYCFIF3f7rUKdxFfPQEOgA5lrLHZBnrY1bQgMxolEc
-cByAwb16MAsimROr/dOuDYff5W13HhqLQIIR9w==
+qjMVQ/AtbzKGXZ2809Xn0oejLCQLe2W7Kl1Eu1DREF4mzFBaJ44BHGVoA1cWKpcpTVuS+kyU7Pko
+xHm9KRMMubGzQi/uvSveeIQ2hyQbTByc5fNwb0JnNZ1afgV7i4C4g/hMiqAvCOF5pCokK1pAgm7A
+pcTd/dFMG4u0DrKLuowM0rOOGba8IQtHHqRvtJdQSY7g9I2zaVQ0/JP1HLVYFgpwLGdvsA7OhJHO
+7Az6RdQzSY+tbz09FFiYih404q7Dpbgd6yPBo5nvI6fE6SH45PBngzvatavJIoSUj1iVmLXURBCT
+hROU19VbpFskaxYgHMS8O0xk9Wh1fSH6iiA7Iw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
