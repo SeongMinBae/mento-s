@@ -1,6 +1,6 @@
 ![Alt text](/image/md1.png)
 
-# What is SEAWATCH??
+# What is SeaWatch??
  - 쉬웠지(seawatch)는 해양관광객, 레저스포츠를 즐기는 인구들에게 맞춤형 정보를 제공하기 위한   갤럭시 워치 어플리케이션입니다. 
 
 
