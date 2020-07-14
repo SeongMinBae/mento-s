@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>SOS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-indicator.css">
+    <link rel="stylesheet" href="css/tau.min.css">
+    <link rel="stylesheet" href="css/tau.circle.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="color: black; background-color: black;">
+	<div class="ui-page ui-page-active" id="main">
+		<header class="ui-header">
+			<h2 class="ui-title">SOS</h2>
+		</header>
+		<div class="ui-content">
+				
+				<img href="sms:010-7515-1801?body=현재위치로 구조요청합니다. 현재위치:<%=lat%>" src="image/sos.png" alt="sos" style="width=:150px; height:150px" onclick="call()"></img>
+				 <!-- 
+				<img href="sms:010-7515-1801" src="image/sos.png" alt="sos" style="width=:150px; height:150px" onclick="call()"></img>
+				 -->
+		</div>
+	</div>
+
+</body>
+
+<script src="lib/tau/wearable/js/tau.min.js"></script>
+<script src="js/circle-helper.js"></script> 
+<script src="js/info.js"></script>
+<script src="js/lowBatteryCheck.js"></script>
+
+<script>
+		
+		var lat="";
+		var lon="";
+		
+		if(navigator.geolocation)
+		{
+			navigator.geolocation.getCurrentPosition(function(position){
+				
+				lat=position.coords.latitude;
+				lon=position.coords.longitude;
+			});
+		}
+		
+		
+		function call()
+		{
+			alert("신고가 접수되었습니다\n"+"현재위치"+lat+"."+lon);			
+		}
+		
+		
+</script>
+
+</html>
+
+

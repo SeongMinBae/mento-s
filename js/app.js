@@ -4,7 +4,7 @@
             "파고, 유속, 유향, 해무 정보",
             "조위, 수온, 기온, 풍량, 풍속 정보",
             "실시간 해양 관광 정보",
-            "서핑","Fish counter"
+            "서핑","Fish counter","SOS"
         ],
         MAIN_DATA_IMAGE = [ 
             "./image/fish3.svg",
@@ -62,6 +62,10 @@
             else if(data == 5)
             {
             	location.href="fishcount.html";//하나 파기 
+            }
+            else if(data==6)
+            {
+            	location.href="sos.html";
             }
             //위에 string 배열 순서대로 data 숫자 카운트 할것. .. 
         };
