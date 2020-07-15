@@ -4,14 +4,16 @@
             "파고, 유속, 유향, 해무 정보",
             "조위, 수온, 기온, 풍량, 풍속 정보",
             "실시간 해양 관광 정보",
-            "서핑"
+            "서핑",
+            "Fish count"
         ],
         MAIN_DATA_IMAGE = [ 
             "./image/fish3.svg",
             "./image/wave.svg",
             "./image/wind.svg",
             "./image/travel2.svg",
-            "./image/surfing3.svg"
+            "./image/surfing3.svg",
+            "./image/다운로드.png"
         ],
         HEADER_DATA = {
             "NONE": {
@@ -29,7 +31,12 @@
 
         animRequest = 0,
         animStartTime = 0;
-
+    	
+    var fish_count = [
+              "우럭", "농어", "광어",
+              "민물고기", "돔"
+            ];
+    
     function emptyElement(elm) {
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
@@ -52,10 +59,14 @@
             	location.href = "info2.html";
             }else if(data == 3){
             	location.href = "trip.html";
+            }else if(data == 5){
+            	window.onload = init1();
             }
         };
     }
 
+    
+    
     function pushData() {
         var i;
         for (i = 0; i < MENU_NAME.length; i++) {
@@ -67,6 +78,19 @@
         }
         
     }
+    
+    function pushData1() {
+        var i;
+        for (i = 0; i < fish_count.length; i++) {
+            if (fish_count[i]) {
+                listController.addData(fish_count[i], null, createPageChangeFunc(i));
+            } else {
+                listController.addData(MENU_NAME[i], null, createPageChangeFunc(i));
+            }
+        }
+        
+    }
+
 
     function keyEventHandler(ev) {
         if (ev.keyName === "back") {
@@ -177,6 +201,16 @@
         listController.setScrollUpCallback(scrollUpCallbackHeader);
         listController.setScrollDownCallback(scrollDownCallbackHeader);
     }
-
+    	
+    function init1() {
+    	listController.init("list-buddy");
+        pushData1();
+        window.addEventListener("tizenhwkey", keyEventHandler);
+        pageController.addPage("fish count");
+        
+       
+        listController.setScrollUpCallback(scrollUpCallbackHeader);
+        listController.setScrollDownCallback(scrollDownCallbackHeader);
+    }
     window.onload = init();
 }());

@@ -2,58 +2,197 @@
 <html>
 
 <head>
-    <style> p{ 
-    		background-color:yellow;
-    		border : 2px solid red; }
-    </style>
-    	<meta charset="utf-8">
-    <title>FishCounter</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Fish Counter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-indicator.css">
+    <link rel="stylesheet" href="css/tau.min.css">
+    <link rel="stylesheet" href="css/tau.circle.min.css">
+    <style>
+.button { background-color: black; outline-color:#00FF00; border-width: 2px; border-radius: 50%; border-style: solid; border-color: #00FF00; color: #00FF00; padding: 15px 30px;text-align: center;text-decoration: none; display: inline-block;font-size: 20px;margin: 4px 2px;cursor: pointer;
+}</style>
+  
+       
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-	<strong>FishCounter</strong>
-	<P>잡은 물고기의 종류를 입력하세요</P>
-	
-	<ol>
-	<li><p>농어
-	<input type = "button" onclick="var[0]++" value="+">
-	<input type = "button" onclick="num++" value="농어">
-	<input type = "button" onclick="var[0]++" value="-">
-	</p></li>
-	<li>우럭
-	<input type = "button" onclick="var[0]++" value="+">
-	<input type = "button" onclick="num++" value="농어">
-	<input type = "button" onclick="var[0]++" value="-">
-	</li>
-	<li>광어
-	<input type = "button" onclick="var[0]++" value="+">
-	<input type = "button" onclick="num++" value="농어">
-	<input type = "button" onclick="var[0]++" value="-">
-	</li>
-	<li>돔
-	<input type = "button" onclick="var[0]++" value="+">
-	<input type = "button" onclick="num++" value="농어">
-	<input type = "button" onclick="var[0]++" value="-">
-	</li>
-	<li>놀래미
-	<input type = "button" onclick="var[0]++" value="+">
-	<input type = "button" onclick="num++" value="농어">
-	<input type = "button" onclick="var[0]++" value="-">
-	</li>
-	<li>복어
-	<input type = "button" onclick="var[0]++" value="+">
-	<input type = "button" onclick="num++" value="농어">
-	<input type = "button" onclick="var[0]++" value="-">
-	</li>
-	</ol>
-	
-	 
-
-    <script>
-	var fish[6]={0};    dc ;
-	
-	
-	
-    </script>
+<body style="color: black; background-color: black;">
+	<div class="pad">
+		padding :"0 100 0 100px"	<!-- 여기 수정했음  -->
+	</div>
+   <div class="ui-page ui-page-active" id="main">
+      <header class="ui-header">
+         <h2 class="ui-title">Fish Counter</h2>
+      </header>
+      <div class="ui-content"
+     		data-role="page">
+         <ul class="ui-listview">
+            <li>
+            <div>
+            	<div>
+            	<input type="button" class="button" value="+" onclick="increase_fish1()"/>
+            	<a onclick="view_fish('광어',fish1)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#00FF00;">광어</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            	<input type="button" class="button" value="-" onclick="decrease_fish1()"/>
+            	</div>
+            </div>
+            </li>
+            
+            <li>
+            <div>
+            	<div>
+            		<input type="button" class="button"  value="+" onclick="increase_fish2()"/>
+            		<a onclick="view_fish('우럭',fish2);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#00FF00;">우럭</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            		<input type="button" class="button" value="-" onclick="decrease_fish2()"/>
+            	</div>
+            </div>
+            </li>
+            
+            <li>
+            <div>
+            	<div>
+            		<input type="button" value="+" class="button" onclick="increase_fish2()"/>
+            		<a onclick="view_fish('우럭',fish2);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#00FF00;">메기</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            		<input type="button" value="-" class="button" onclick="decrease_fish2()"/>
+            	</div>
+            </div>
+            </li>
+            
+            <li>
+            <div>
+            	<div>
+            		<input type="button" value="+" class="button" onclick="increase_fish2()"/>
+            		<a onclick="view_fish('우럭',fish2);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#00FF00;">민물고기</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            		<input type="button" value="-" class="button" onclick="decrease_fish2()"/>
+            	</div>
+            </div>
+            </li>
+            
+            <li>
+            <div>
+            	<div>
+            		<input type="button" value="+" class="button" onclick="increase_fish2()"/>
+            		<a onclick="view_fish('우럭',fish2);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#00FF00;">기타</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            		<input type="button" value="-" class="button" onclick="decrease_fish2()"/>
+            	</div>
+            </div>
+            </li>
+            
+            <li><a onclick="#;">123</a></li>
+            <li><a onclick="#;">123</a></li>
+            <li><a onclick="#;">123</a></li>
+         </ul>
+      </div>
+   </div>
 </body>
+
+
+<script src="lib/tau/wearable/js/tau.min.js"></script>
+<script src="js/circle-helper.js"></script>
+<script src="js/info.js"></script>
+<script src="js/lowBatteryCheck.js"></script>
+<scirpt src="js/app.js"></scirpt>
+<script src="js/custom-indicator.js"></script>
+<script src="js/page.js"></script>
+
+
+<script>
+   
+      var fish1=0;
+      var fish2=0;
+      var fish3=0;
+      var fish4=0;
+      var fish5=0;
+      
+      function increase_fish1()
+      {
+         fish1+=1;
+      }
+      
+      function increase_fish2()
+      {
+         fish2+=1;
+      }
+      
+      function increase_fish3()
+      {
+         fish3+=1;
+      }
+      
+      function increase_fish4()
+      {
+         fish4+=1;
+      }
+      
+      function increase_fish5()
+      {
+         fish5+=1;
+      }
+      
+      function decrease_fish1()
+      {
+         fish1-=1;
+         if(fish1<0)
+            fish1=0;
+      }
+      
+      function decrease_fish2()
+      {
+         fish2-=1;
+         if(fish2<0)
+            fish2=0;
+      }
+      
+      
+      function decrease_fish3()
+      {
+         fish3-=1;
+         if(fish3<0)
+            fish3=0;
+      }
+      
+      function decrease_fish4()
+      {
+         fish4-=1;
+         if(fish4<0)
+            fish4=0;
+      }
+      
+      function decrease_fish5()
+      {
+         fish5-=1;
+         if(fish5<0)
+            fish5=0;
+      }
+      
+      
+      
+      function view_fish(text,viewfish)
+      {
+         alert(text+" 잡은개수 :"+viewfish+"\n");
+         
+      }
+   
+      function total_fish()
+      {
+         var fishtotal=fish1+fish2+fish3+fish4+fish5;
+         alert("총 잡은 물고기"+fishtotal+"\n");   
+      }
+         
+   
+   
+    function keyEventHandler(ev) {
+        if (ev.keyName === "back") {
+            window.history.back();    
+        }
+    }
+    
+    function init() {
+        window.addEventListener("tizenhwkey", keyEventHandler);
+    }
+   
+   window.onload = init();
+  
+</script>
 </html>
