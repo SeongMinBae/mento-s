@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>cRs7t0cUNkR3ZFp4HVc1e/sisvgnk6Mp4E22CZclq6Y=</DigestValue>
+<DigestValue>HGKCNtiFmVYUm3L/weKU4cm4D9UjmwBzPw68RXtShMc=</DigestValue>
 </Reference>
 <Reference URI="bae%20(1).launch">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -60,7 +60,7 @@
 </Reference>
 <Reference URI="fishcount.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>3/dQmQEYJX0VP/OUNCJF2I6my6uw6znN/jau4psoGWY=</DigestValue>
+<DigestValue>j1Oit0jHfA27Ts9fOL4+xb7lwg2fZWBoURFJgvktHuo=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -206,6 +206,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>TOCtb0kkz7USzx9kh7YmGy58++JXlgKJYEmPVxNC1/E=</DigestValue>
 </Reference>
+<Reference URI="image%2Fsos.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ZrtfVZs1WOTXfABYsBB7ZKnkg1ehPODild1QHOhkDVY=</DigestValue>
+</Reference>
 <Reference URI="image%2Fsurfing.svg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>Ng2y1eXjdTAdOkE8YhvLmoiV0svWk5F9wMKgADHsZJk=</DigestValue>
@@ -276,7 +280,7 @@
 </Reference>
 <Reference URI="js%2Fapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Bue6NN9ukcumldUspVd+gSy0GqByOMt9rAj3XgMwEkQ=</DigestValue>
+<DigestValue>pqckLPOFONnpUwiGHZ9YtqArfGr7EIHanPUkv/yPS7E=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcircle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -302,6 +306,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>iC36P6puQBqWb/8Q/o4yL7C9eeGCDvJjtjRV6WUYod0=</DigestValue>
 </Reference>
+<Reference URI="sos.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>xEW2MnvIsSJZADHrmlZxxomzPIcGv4htVJL5FAPuf1s=</DigestValue>
+</Reference>
 <Reference URI="trip.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>YrlswhVEUfpuRStz4lebDZcsxgn1Cs32X1u09Pkm/BA=</DigestValue>
@@ -319,11 +327,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-NcutzPo3ywihy33MtDDTXbfrtwWf6COGpOBreXszPDkHIoAB76nswHfwCa30ATE3x/NosZuBoqa0
-nrjFS7/yRZUzYKsACu5CITX/ZpB7fgqXaQ/2IOGQt48oGsBIV0qLA8K/ce7vKBxc+EFtTCMms/+L
-ymI0lkI7Qbny96FS56i+uXzxa/HJU+GZxsI+okrSsbiLztNGEDUYm9r0DyOhjVGMaeUc5KOxMKLG
-+AmbHo7fH2HKGQWxr0318240hYNOTpcRS5SLipEiZjQsu4JSbsE/xUEdmySZC2OtgOm2S5xIWpeF
-5ggQ2a40v5Be4qArnBEJIpkUBVuLOtfGfMUuVA==
+JoSBAZZVEW+CWNGq6wUTOek620ibUxYlPTPPne/lD1w/xXTpBluM7IP/7BaUlznojn6PyouwRzrS
+shR/SD7Uo4n3eOjIEP3WWiqOk3J4ehJmMS6VWOeUWygB1xmhBTDkL0Gw6HbZLiRtm5wsLTqJYgd3
+SoMKTCDi+E7C9neM+vOjodRTahl+qAdFaestMp6o+Xf9bQxGH46HEtUhqHb40kr/JwPZC+t28TVc
+pg2vC1NthLWQ41YB68nwE81oO1gTyKeiQ6Up/F4A2AxEjAe6c/FwWkf7LqC25o9vYxtcRkIq2Djg
+Wmagtl/0wY2KMkbbiFci3D/MPJA7UOP6wwo7gQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
