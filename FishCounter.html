@@ -650,6 +650,9 @@
 	    
 	    function init() {
 	        window.addEventListener("tizenhwkey", keyEventHandler);
+	        
+        	listController.setScrollUpCallback(scrollUpCallbackHeader);
+        	listController.setScrollDownCallback(scrollDownCallbackHeader);
 	    }
 	   
 	    

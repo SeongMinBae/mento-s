@@ -61,7 +61,7 @@
             }
             else if(data == 5)
             {
-            	location.href="fishcount.html";//하나 파기 
+            	location.href="FishCounter.html";//하나 파기 
             }
             else if(data==6)
             {
