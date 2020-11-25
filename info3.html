@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>출항 정보</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-indicator.css">
+    <link rel="stylesheet" href="css/tau.min.css">
+    <link rel="stylesheet" href="css/tau.circle.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="color: black; background-color: black;">
+	<div class="ui-page ui-page-active" id="main">
+		<header class="ui-header">
+			<h2 class="ui-title">출항 정보[항구]</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview">
+				<li><a onclick="info(1);">인천항</a></li>
+				<li><a onclick="info(2);">부산항</a></li>
+				<li><a onclick="info(3);">여수광양항</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+<script src="lib/tau/wearable/js/tau.min.js"></script>
+<script src="js/circle-helper.js"></script>
+<script src="js/info.js"></script>
+<script src="js/lowBatteryCheck.js"></script>
+
+<script>
+	function info(key){
+		var path = "http://118.219.153.6/"
+		if(key == "1")
+			path += "data_incheon.json"
+		else if(key == "2")
+			path += "data_busan.json"
+		else if(key == "3")
+			path += "data_yeosoo.json"
+			
+      	$.support.cors = true;  // Cross Origin Resource Sharing  
+       	$.ajax({
+        	dataType:"json",
+        	async : false,
+           	url: path, // 동적 IP 주소는 계속 변경된다.
+            success:function(data){
+            	// rst_str는 json 파일의 모든 value 값의 합
+            	var rst_str= '';
+            	
+            	if(key == "1"){
+            		for(var i in data)
+                	rst_str += "\n\n\n\n일자: " + data[i].date + "\n선사: " + data[i].c_name + "\n선명: " + data[i].s_name + "\n출발: " + data[i].start_t + "\n경유지:" + data[i].via_depart_t + "\n정착: " + data[i].end_t + "\n출항 여부: " + data[i].depart_or_not;
+            	}
+				else if(key == "2"){
+					for(var i in data)
+					rst_str += "\n항로:" + data[i].항로 + "\n선사: " + data[i].선사 + "\n선명: " + data[i].선명 + "\n운항형태: " + data[i].운항형태 + "\n출항: " + data[i].출항 + "\n입항: " + data[i].입항 + "\n소요시간: " + data[i].소요시간 + "\n연락처: " + data[i].연락처;
+				}
+				else if(key == "3"){
+					for(var i in data)
+					rst_str += "\n\n목적지: " + data[i].dest + "\n선사: " + data[i].c_name + "\n연락처: " + data[i].c_number + "\n선명: " + data[i].s_name + "\n정원: " + data[i].limit + "\n<경유지 순서>\n" + data[i].via_arrive + "\n동계기간: " + data[i].winter + "\n출항: " + data[i].start_winter_t + "\n소요 시간: " + data[i].spend_t;
+				}
+                               
+            	alert(rst_str + "\n\n");
+            }
+        });
+		
+		
+		// 이 시점에 비동기 데이터 사라진다. 
+		// console.log(lemonPrice);
+   		
+	}
+	
+
+    function keyEventHandler(ev) {
+        if (ev.keyName === "back") {
+            window.history.back();    
+        }
+    }
+    
+    function init() {
+        window.addEventListener("tizenhwkey", keyEventHandler);
+    }
+
+	window.onload = init();
+</script>
+</html>

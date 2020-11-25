@@ -4,7 +4,7 @@
             "파고, 유속, 유향, 해무 정보",
             "조위, 수온, 기온, 풍량, 풍속 정보",
             "실시간 해양 관광 정보",
-            "서핑","Fish counter","SOS"
+            "서핑","Fish counter","SOS","출항 정보"
         ],
         MAIN_DATA_IMAGE = [ 
             "./image/fish3.png",
@@ -13,7 +13,8 @@
             "./image/travel2.png",
             "./image/surfing3.png",
             "./image/다운로드.png",
-            "./image/sos.png"
+            "./image/sos.png",
+            "./image/ship.svg"
             //여기다가 메뉴 이미지 추가할것 
         ],
         HEADER_DATA = {
@@ -68,6 +69,10 @@
             else if(data==6)
             {
             	location.href="sos.html";
+            }
+            else if(data==7)
+            {
+            	location.href="info3.html";
             }
             //위에 string 배열 순서대로 data 숫자 카운트 할것. .. 
         };
