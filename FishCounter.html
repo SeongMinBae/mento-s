@@ -176,7 +176,7 @@
 	   	  
 	   	db = openDatabase(dbName,version,dbName,dbSize);
 	   
-	   
+	   x
 	    
 	   	db.transaction( 
 	   	  		function(t) {
@@ -290,7 +290,7 @@
 	         db.transaction(
 	         	function(e) {
 	         	
-	         		e.executeSql("update tizenTable set count= ? where fish=? ",[fish1,"참돔"]);
+	         		e.executeSql("update tizenTable set count= ? where fish=? ",[fish1,"감성돔"]);
 	         		
 	         	}
 	         );
@@ -651,11 +651,12 @@
 	    function init() {
 	        window.addEventListener("tizenhwkey", keyEventHandler);
 	        
-        	listController.setScrollUpCallback(scrollUpCallbackHeader);
-        	listController.setScrollDownCallback(scrollDownCallbackHeader);
+	        
+        	
 	    }
 	   
-	    
+	   	  
+	   	  
 	   	  
 	   
 	  	window.onload = init();
@@ -684,6 +685,11 @@
 	   	  
 		   };
 		   */   
+	   
+	   
+
+	   
+	   
 	   
 </script>
 </html>

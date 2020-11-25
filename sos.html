@@ -17,8 +17,8 @@
 			<h2 class="ui-title">SOS</h2>
 		</header>
 		<div class="ui-content">
-				
-				<img href="sms:010-7515-1801?body=현재위치로 구조요청합니다. 현재위치:<%=lat%>" src="image/sos.png" alt="sos" style="width=:150px; height:150px" onclick="call()"></img>
+				<img href="sms:010-7515-1801?body='배성민'님께 현재위치로 구조요청합니다. 현재위치:36.127" src="image/sos.png" alt="sos" style="width=:150px; height:150px" onclick="call()"></img>
+				 <!--<img href="sms:010-7515-1801?body=현재위치로 구조요청합니다. 현재위치:<%=lat%>" src="image/sos.png" alt="sos" style="width=:150px; height:150px" onclick="call()"></img>-->
 				 <!-- 
 				<img href="sms:010-7515-1801" src="image/sos.png" alt="sos" style="width=:150px; height:150px" onclick="call()"></img>
 				 -->
@@ -49,7 +49,8 @@
 		
 		function call()
 		{
-			alert("신고가 접수되었습니다\n"+"현재위치"+lat+"."+lon);			
+			alert("'배성민'님께 현재위치로 구조요청합니다. 현재위치:36.127");
+			//alert("신고가 접수되었습니다\n"+"현재위치"+lat+"."+lon);			
 		}
 		
 		

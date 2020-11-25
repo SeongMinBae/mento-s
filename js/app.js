@@ -7,11 +7,13 @@
             "서핑","Fish counter","SOS"
         ],
         MAIN_DATA_IMAGE = [ 
-            "./image/fish3.svg",
-            "./image/wave.svg",
-            "./image/wind.svg",
-            "./image/travel2.svg",
-            "./image/surfing3.svg"
+            "./image/fish3.png",
+            "./image/wave.png",
+            "./image/wind.png",
+            "./image/travel2.png",
+            "./image/surfing3.png",
+            "./image/다운로드.png",
+            "./image/sos.png"
             //여기다가 메뉴 이미지 추가할것 
         ],
         HEADER_DATA = {
@@ -179,7 +181,20 @@
             }
         }
     }
+    
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function init() {
         listController.init("list-buddy");
         pushData();
